@@ -30,12 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FHdBanBo));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.picQr = new System.Windows.Forms.PictureBox();
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnLuu = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnXoa = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -44,6 +46,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.lbMaHd = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.gunaImageButton1 = new Guna.UI.WinForms.GunaImageButton();
             this.txTimKiem = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.panelInforHD = new System.Windows.Forms.Panel();
@@ -56,10 +59,6 @@
             this.cbMaNv = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dtgvHD = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
-            this.gunaImageButton1 = new Guna.UI.WinForms.GunaImageButton();
-            this.label5 = new System.Windows.Forms.Label();
-            this.picQr = new System.Windows.Forms.PictureBox();
             this.maHd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nhacungcap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nhanvien = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,14 +67,15 @@
             this.trangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.linkQr = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.chitiet = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picQr)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.panelInforHD.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvHD)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picQr)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -132,6 +132,26 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Hóa đơn";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(742, 181);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(54, 13);
+            this.label5.TabIndex = 64;
+            this.label5.Text = "QR Code";
+            // 
+            // picQr
+            // 
+            this.picQr.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picQr.Location = new System.Drawing.Point(685, 16);
+            this.picQr.Name = "picQr";
+            this.picQr.Size = new System.Drawing.Size(171, 162);
+            this.picQr.TabIndex = 63;
+            this.picQr.TabStop = false;
             // 
             // bunifuFlatButton1
             // 
@@ -344,6 +364,20 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Tìm Kiếm";
             // 
+            // gunaImageButton1
+            // 
+            this.gunaImageButton1.BackgroundImage = global::QuanLyBoSua.Properties.Resources.qr;
+            this.gunaImageButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.gunaImageButton1.Image = null;
+            this.gunaImageButton1.ImageSize = new System.Drawing.Size(64, 64);
+            this.gunaImageButton1.Location = new System.Drawing.Point(300, 15);
+            this.gunaImageButton1.Name = "gunaImageButton1";
+            this.gunaImageButton1.OnHoverImage = null;
+            this.gunaImageButton1.OnHoverImageOffset = new System.Drawing.Point(0, 0);
+            this.gunaImageButton1.Size = new System.Drawing.Size(31, 29);
+            this.gunaImageButton1.TabIndex = 4;
+            this.gunaImageButton1.Click += new System.EventHandler(this.gunaImageButton1_Click);
+            // 
             // txTimKiem
             // 
             this.txTimKiem.Location = new System.Drawing.Point(97, 16);
@@ -465,20 +499,20 @@
             // dtgvHD
             // 
             this.dtgvHD.AllowUserToAddRows = false;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dtgvHD.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dtgvHD.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dtgvHD.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dtgvHD.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgvHD.CausesValidation = false;
             this.dtgvHD.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvHD.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvHD.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dtgvHD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvHD.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.maHd,
@@ -501,44 +535,6 @@
             this.dtgvHD.TabIndex = 24;
             this.dtgvHD.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvHD_CellClick);
             this.dtgvHD.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvHD_CellContentClick);
-            // 
-            // gunaElipse1
-            // 
-            this.gunaElipse1.TargetControl = this;
-            // 
-            // gunaImageButton1
-            // 
-            this.gunaImageButton1.BackgroundImage = global::QuanLyBoSua.Properties.Resources.qr;
-            this.gunaImageButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.gunaImageButton1.Image = null;
-            this.gunaImageButton1.ImageSize = new System.Drawing.Size(64, 64);
-            this.gunaImageButton1.Location = new System.Drawing.Point(300, 15);
-            this.gunaImageButton1.Name = "gunaImageButton1";
-            this.gunaImageButton1.OnHoverImage = null;
-            this.gunaImageButton1.OnHoverImageOffset = new System.Drawing.Point(0, 0);
-            this.gunaImageButton1.Size = new System.Drawing.Size(31, 29);
-            this.gunaImageButton1.TabIndex = 4;
-            this.gunaImageButton1.Click += new System.EventHandler(this.gunaImageButton1_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(742, 181);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(54, 13);
-            this.label5.TabIndex = 64;
-            this.label5.Text = "QR Code";
-            // 
-            // picQr
-            // 
-            this.picQr.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picQr.Location = new System.Drawing.Point(685, 16);
-            this.picQr.Name = "picQr";
-            this.picQr.Size = new System.Drawing.Size(171, 162);
-            this.picQr.TabIndex = 63;
-            this.picQr.TabStop = false;
             // 
             // maHd
             // 
@@ -596,6 +592,10 @@
             this.chitiet.Text = "Chi Tiết";
             this.chitiet.UseColumnTextForButtonValue = true;
             // 
+            // gunaElipse1
+            // 
+            this.gunaElipse1.TargetControl = this;
+            // 
             // timer1
             // 
             this.timer1.Interval = 1000;
@@ -618,12 +618,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picQr)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.panelInforHD.ResumeLayout(false);
             this.panelInforHD.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvHD)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picQr)).EndInit();
             this.ResumeLayout(false);
 
         }

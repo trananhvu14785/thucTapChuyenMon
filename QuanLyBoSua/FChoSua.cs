@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Speech.Recognition;
+using System.Speech.Synthesis;
 
 namespace QuanLyBoSua
 {
@@ -21,6 +23,9 @@ namespace QuanLyBoSua
             loadBo();
             loadListLaySua();
         }
+        SpeechRecognitionEngine recognitionEngine = new SpeechRecognitionEngine();
+        SpeechSynthesizer SpeechSynthesizer = new SpeechSynthesizer();
+        Choices choicess = new Choices();
         void loadNhanVien()
         {
             try
@@ -30,7 +35,6 @@ namespace QuanLyBoSua
                 cbMaNv.DataSource = Data;
                 cbMaNv.DisplayMember = "maNv";
                 cbMaNv.ValueMember = "maNv";
-                cbMaNv.Text = "";
                 if (MaNv != "")
                 {
                     cbMaNv.Text = MaNv;
@@ -43,12 +47,20 @@ namespace QuanLyBoSua
                 a.ShowDialog();
             }
         }
+        string[] listBo;
         void loadBo()
         {
             try { 
             string query = "select * from DanBo,categoryBo where DanBo.idCategory=categoryBo.idCategory" +
                     " and DanBo.idCategory='3' and GioiTinh=N'Cái' and ngayXuatChuong is null";
             DataTable data = KetNoi.Istance.ExcuteQuerry(query);
+                listBo = new string[data.Rows.Count];
+                int i = 0;
+                foreach(DataRow row in data.Rows)
+                {
+                    listBo[i]=row["maBo"].ToString();
+                    i++;
+                }
             cbMaBo.DataSource = data;
             cbMaBo.DisplayMember = "maBo";
             cbMaBo.ValueMember = "maBo";
@@ -284,6 +296,33 @@ namespace QuanLyBoSua
             btnSua.Enabled = true;
             btnXoa.Enabled = true;
             dem = 0;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            recognitionEngine.RecognizeAsync(RecognizeMode.Multiple);
+         
+
+        }
+
+        private void sre_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
+        {
+
+            txTimKiem.Text = e.Result.Text;
+        }
+
+        private void FChoSua_Load(object sender, EventArgs e)
+        {
+          //  GrammarBuilder females = new Choices(listBo);
+          string[] a={"9","1","v" };
+            choicess.Add(a);
+            GrammarBuilder gb = new GrammarBuilder();
+            gb.Append(choicess);
+            Grammar g = new Grammar(gb);
+            recognitionEngine.LoadGrammarAsync(g);
+            recognitionEngine.SetInputToDefaultAudioDevice();
+            recognitionEngine.SpeechRecognized +=
+        new EventHandler<SpeechRecognizedEventArgs>(sre_SpeechRecognized);
         }
     }
 }

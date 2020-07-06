@@ -166,6 +166,12 @@
     <Compile Include="FChoSua.Designer.cs">
       <DependentUpon>FChoSua.cs</DependentUpon>
     </Compile>
+    <Compile Include="FGuiMailDoanhThu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FGuiMailDoanhThu.Designer.cs">
+      <DependentUpon>FGuiMailDoanhThu.cs</DependentUpon>
+    </Compile>
     <Compile Include="FHdBanBo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -351,6 +357,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FChoSua.resx">
       <DependentUpon>FChoSua.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FGuiMailDoanhThu.resx">
+      <DependentUpon>FGuiMailDoanhThu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FHdBanBo.resx">
       <DependentUpon>FHdBanBo.cs</DependentUpon>

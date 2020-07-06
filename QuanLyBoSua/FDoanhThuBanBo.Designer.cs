@@ -253,7 +253,7 @@
             this.bunifuThinButton22.IdleFillColor = System.Drawing.Color.Teal;
             this.bunifuThinButton22.IdleForecolor = System.Drawing.Color.Black;
             this.bunifuThinButton22.IdleLineColor = System.Drawing.Color.Black;
-            this.bunifuThinButton22.Location = new System.Drawing.Point(282, 543);
+            this.bunifuThinButton22.Location = new System.Drawing.Point(245, 543);
             this.bunifuThinButton22.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bunifuThinButton22.Name = "bunifuThinButton22";
             this.bunifuThinButton22.Size = new System.Drawing.Size(66, 43);
@@ -279,7 +279,7 @@
             this.bunifuThinButton23.IdleFillColor = System.Drawing.Color.Teal;
             this.bunifuThinButton23.IdleForecolor = System.Drawing.Color.Black;
             this.bunifuThinButton23.IdleLineColor = System.Drawing.Color.Black;
-            this.bunifuThinButton23.Location = new System.Drawing.Point(377, 543);
+            this.bunifuThinButton23.Location = new System.Drawing.Point(340, 543);
             this.bunifuThinButton23.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bunifuThinButton23.Name = "bunifuThinButton23";
             this.bunifuThinButton23.Size = new System.Drawing.Size(66, 43);
@@ -305,7 +305,7 @@
             this.btnMail.IdleFillColor = System.Drawing.Color.Teal;
             this.btnMail.IdleForecolor = System.Drawing.Color.Black;
             this.btnMail.IdleLineColor = System.Drawing.Color.Black;
-            this.btnMail.Location = new System.Drawing.Point(465, 543);
+            this.btnMail.Location = new System.Drawing.Point(428, 543);
             this.btnMail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMail.Name = "btnMail";
             this.btnMail.Size = new System.Drawing.Size(66, 43);

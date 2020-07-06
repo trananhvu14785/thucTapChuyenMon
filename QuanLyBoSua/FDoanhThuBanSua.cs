@@ -162,35 +162,16 @@ namespace QuanLyBoSua
 
         private void btnMail_Click(object sender, EventArgs e)
         {
-            try
+
+            if (path == "")
             {
-                if (path == "")
-                {
-                    Alert b = new Alert("Hãy Xuất file trước khi gửi!", AlertType.success);
-                    b.ShowDialog();
-                }
-                else
-                {
-                    SmtpClient mailclient = new SmtpClient("smtp.gmail.com", 587);
-                    mailclient.EnableSsl = true;
-                    mailclient.Credentials = new NetworkCredential("hoanglaptrinh6399@gmail.com", "dinhhoang0603");
-
-                    MailMessage message = new MailMessage("hoanglaptrinh6399@gmail.com", "trumpbaby6969@gmail.com");
-                    message.Subject = "BÁO CÁO DOANH THU BÁN SỮA";
-                    message.Body = "Gửi admin báo cáo doanh thu bán sữa từ ngày " + dtpkTuNgay.Value.ToString() + " đến ngày " + dtpkDenNgay.Value.ToString();
-                    message.Attachments.Add(new Attachment(Convert.ToString(path)));
-
-                    mailclient.Send(message);
-                    message = null;
-                    Alert a = new Alert("Mail đã được gửi đi!", AlertType.success);
-                    a.ShowDialog();
-                }
-            
+                Alert b = new Alert("Hãy Xuất file trước khi gửi!", AlertType.success);
+                b.ShowDialog();
             }
-            catch
+            else
             {
-                Alert a = new Alert("Báo cáo chưa được gửi do lỗi mạng!", AlertType.info);
-                a.ShowDialog();
+                FGuiMailDoanhThu fGuiMailDoanhThu = new FGuiMailDoanhThu(path, dtpkTuNgay.Value.ToString(), dtpkDenNgay.Value.ToString(), "Bán Sữa");
+                fGuiMailDoanhThu.ShowDialog();
             }
         }
     }

@@ -78,9 +78,9 @@ namespace QuanLyBoSua
 
                     SmtpClient mailClient = new SmtpClient("smtp.gmail.com", 587);
                     mailClient.EnableSsl = true;
-                    mailClient.Credentials = new NetworkCredential("hoanglaptrinh6399@gmail.com", "dinhhoang0603");
+                    mailClient.Credentials = new NetworkCredential("trananhvu10121999@gmail.com", "01884767166");
 
-                    MailMessage message = new MailMessage("hoanglaptrinh6399@gmail.com", email);
+                    MailMessage message = new MailMessage("trananhvu10121999@gmail.com", email);
                     message.Subject = "Password tài khoản" + txtTenDn.Text + "đã quên mật khẩu";
                     message.Body = "Mật khẩu của tài khoản " + txtTenDn.Text + " là:" + "\n" + mk;
 

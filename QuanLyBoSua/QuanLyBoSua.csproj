@@ -520,6 +520,7 @@
     <Folder Include="QR\HdNhapThuoc\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\icons8-voice-641.png" />
     <None Include="Resources\icons8-voice-64.png" />
     <None Include="Resources\icons8-update-50.png" />
     <None Include="Resources\exit.png" />

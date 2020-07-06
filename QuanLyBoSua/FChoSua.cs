@@ -9,13 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Speech.Recognition;
 using System.Speech.Synthesis;
+using System.Speech;
 
 namespace QuanLyBoSua
 {
     public partial class FChoSua : Form
     {
         private string maNv;
-        public FChoSua(string maNv=null)
+        public FChoSua(string maNv = null)
         {
             this.MaNv = maNv;
             InitializeComponent();
@@ -50,21 +51,21 @@ namespace QuanLyBoSua
         string[] listBo;
         void loadBo()
         {
-            try { 
-            string query = "select * from DanBo,categoryBo where DanBo.idCategory=categoryBo.idCategory" +
-                    " and DanBo.idCategory='3' and GioiTinh=N'Cái' and ngayXuatChuong is null";
-            DataTable data = KetNoi.Istance.ExcuteQuerry(query);
+            try {
+                string query = "select * from DanBo,categoryBo where DanBo.idCategory=categoryBo.idCategory" +
+                        " and DanBo.idCategory='3' and GioiTinh=N'Cái' and ngayXuatChuong is null";
+                DataTable data = KetNoi.Istance.ExcuteQuerry(query);
                 listBo = new string[data.Rows.Count];
                 int i = 0;
-                foreach(DataRow row in data.Rows)
+                foreach (DataRow row in data.Rows)
                 {
-                    listBo[i]=row["maBo"].ToString();
+                    listBo[i] = row["maBo"].ToString();
                     i++;
                 }
-            cbMaBo.DataSource = data;
-            cbMaBo.DisplayMember = "maBo";
-            cbMaBo.ValueMember = "maBo";
-                }
+                cbMaBo.DataSource = data;
+                cbMaBo.DisplayMember = "maBo";
+                cbMaBo.ValueMember = "maBo";
+            }
             catch
             {
                 Alert a = new Alert("Dữ liệu không hợp lệ hoặc lỗi kết nối.", AlertType.error);
@@ -103,7 +104,7 @@ namespace QuanLyBoSua
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void dtgvVatSua_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -113,28 +114,28 @@ namespace QuanLyBoSua
                 return;
             else
             {
-                lbmachosua.Text= dtgvVatSua.Rows[numrow].Cells[0].Value.ToString();
+                lbmachosua.Text = dtgvVatSua.Rows[numrow].Cells[0].Value.ToString();
                 cbMaBo.Text = dtgvVatSua.Rows[numrow].Cells[1].Value.ToString();
                 DateTime dt = Convert.ToDateTime(dtgvVatSua.Rows[numrow].Cells[2].Value.ToString());
                 dtpkNgayLay.Value = dt;
-                txSoluong.Text= dtgvVatSua.Rows[numrow].Cells[3].Value.ToString();
-                cbMaNv.Text= dtgvVatSua.Rows[numrow].Cells[4].Value.ToString();
+                txSoluong.Text = dtgvVatSua.Rows[numrow].Cells[3].Value.ToString();
+                cbMaNv.Text = dtgvVatSua.Rows[numrow].Cells[4].Value.ToString();
             }
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-          
+
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void txTimKiem_TextChanged(object sender, EventArgs e)
@@ -173,7 +174,7 @@ namespace QuanLyBoSua
             btnThem.Enabled = false;
             btnSua.Enabled = false;
             btnXoa.Enabled = false;
-            
+
         }
 
         private void bunifuFlatButton4_Click(object sender, EventArgs e)
@@ -301,7 +302,7 @@ namespace QuanLyBoSua
         private void button1_Click(object sender, EventArgs e)
         {
             recognitionEngine.RecognizeAsync(RecognizeMode.Multiple);
-         
+
 
         }
 
@@ -313,16 +314,30 @@ namespace QuanLyBoSua
 
         private void FChoSua_Load(object sender, EventArgs e)
         {
-          //  GrammarBuilder females = new Choices(listBo);
-          string[] a={"9","1","v" };
-            choicess.Add(a);
-            GrammarBuilder gb = new GrammarBuilder();
-            gb.Append(choicess);
-            Grammar g = new Grammar(gb);
-            recognitionEngine.LoadGrammarAsync(g);
+            //  GrammarBuilder females = new Choices(listBo);
+            //string[] a={"9","1","v" };
+            //  choicess.Add(a);
+            // GrammarBuilder gb = new GrammarBuilder();
+            //   gb.Append(choicess);
+            //   Grammar g = new Grammar(gb);
+            // recognitionEngine.LoadGrammarAsync(g);
             recognitionEngine.SetInputToDefaultAudioDevice();
+            Grammar grammar = new DictationGrammar();
+            recognitionEngine.LoadGrammar(grammar);
+            // recognitionEngine.LoadGrammarAsync(new Grammar(DictationGrammar()));
+            recognitionEngine.RecognizeAsync();
             recognitionEngine.SpeechRecognized +=
         new EventHandler<SpeechRecognizedEventArgs>(sre_SpeechRecognized);
+            recognitionEngine.RecognizeAsyncStop();
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked == true)
+                recognitionEngine.RecognizeAsync(RecognizeMode.Multiple);
+            else
+                recognitionEngine.RecognizeAsyncStop();
         }
     }
 }

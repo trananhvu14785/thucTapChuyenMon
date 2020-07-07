@@ -49,8 +49,8 @@ namespace QuanLyBoSua
                     mailclient.Credentials = new NetworkCredential("trananhvu10121999@gmail.com", "01884767166");
 
                     MailMessage message = new MailMessage("trananhvu10121999@gmail.com", txMail.Text);
-                    message.Subject = "BÁO CÁO DOANH THU " + Name1;
-                    message.Body = "Gửi admin báo cáo doanh thu bán bò " + Tungay + " đến ngày " + Denngay;
+                    message.Subject = "BÁO CÁO " + Name1;
+                    message.Body = "Gửi admin báo cáo "+Name1+" từ " + Tungay + " đến ngày " + Denngay;
                     message.Attachments.Add(new Attachment(Convert.ToString(Path)));
 
                     mailclient.Send(message);
@@ -58,7 +58,7 @@ namespace QuanLyBoSua
                     Alert a = new Alert("Mail đã được gửi đi!", AlertType.success);
                     a.ShowDialog();
                     this.Close();
-                  
+
                 }
                 catch
                 {

@@ -370,7 +370,7 @@ namespace QuanLyBoSua
             rdbNu.Checked = false;
             fileimage = "";
             dem = 1;
-            
+            dtgvNhanVien.Enabled = false;
             ptAnh.BackgroundImage = null;
             linkLb.Visible = false;
             btnAnh.Visible = true;
@@ -396,6 +396,7 @@ namespace QuanLyBoSua
                 btnThem.Enabled = false;
                 btnSua.Enabled = false;
                 btnXoa.Enabled = false;
+                dtgvNhanVien.Enabled = false;
 
             }
         }
@@ -473,6 +474,7 @@ namespace QuanLyBoSua
                         btnAnh.Visible = false;
                         dem = 0;
                         btnThem.Enabled = true;
+                        dtgvNhanVien.Enabled = true;
                         btnSua.Enabled = true;
                         btnXoa.Enabled = true;
                     }
@@ -504,6 +506,7 @@ namespace QuanLyBoSua
                         ptAnh.BackgroundImage = null;
                         fileimage = "";
                         dem = 0;
+                        dtgvNhanVien.Enabled = true;
                         txMaNv.ReadOnly = false;
                         btnAnh.Visible = false;
                         linkLb.Visible = false;
@@ -537,6 +540,7 @@ namespace QuanLyBoSua
             linkLb.Visible = false;
             btnAnh.Visible = false;
             btnThem.Enabled = true;
+            dtgvNhanVien.Enabled = true;
             btnSua.Enabled = true;
             btnXoa.Enabled = true;
         }
@@ -547,6 +551,7 @@ namespace QuanLyBoSua
             tam = 1;
             btnThemPQ.Enabled = false;
             btnXoaPQ.Enabled = false;
+            dtgvPhanQuyen.Enabled = false;
         }
 
         private void btnXoaPQ_Click(object sender, EventArgs e)
@@ -560,7 +565,7 @@ namespace QuanLyBoSua
             {
                 try
                 {
-                    string query = "Delete PhanViec where maNv='" + cbMaNv.Text + "'";
+                    string query = "Delete PhanViec where maNv='" + cbmaNvPQ.Text + "'";
                     DataTable data = KetNoi.Istance.ExcuteQuerry(query);
                     Alert a = new Alert("Xóa thành công.", AlertType.success);
                     a.ShowDialog();
@@ -590,6 +595,7 @@ namespace QuanLyBoSua
                     dem = 0;
                     btnThemPQ.Enabled = true;
                     btnXoaPQ.Enabled = true;
+                    dtgvPhanQuyen.Enabled = true;
                 }
             }
             catch
@@ -606,6 +612,7 @@ namespace QuanLyBoSua
             txTimKiemPQ.ResetText();
             loadCongViec();
             tam = 0;
+            dtgvPhanQuyen.Enabled = true ;
             btnThemPQ.Enabled = true;
             btnXoaPQ.Enabled = true;
         }
@@ -647,6 +654,7 @@ namespace QuanLyBoSua
                 groupBox1.Enabled = true;
                 demTK = 1;
                 btnDel.Enabled = false;
+                dgvQLTK.Enabled = false;
 
             }
         }
@@ -673,6 +681,7 @@ namespace QuanLyBoSua
                         btnDel.Enabled = true;
                         tbMkMoi.Text = "";
                         tbMkMoiL2.Text = "";
+                        dtgvPhanQuyen.Enabled = true;
                     }
                 }
             }
@@ -687,6 +696,12 @@ namespace QuanLyBoSua
         {
             groupBox1.Enabled = false;
             btnDel.Enabled = true;
+            dtgvPhanQuyen.Enabled = true;
+            tbTenNv.ResetText();
+            tbMkMoi.ResetText();
+            tbTenTk.ResetText();
+            tbMkMoiL2.ResetText();
+            dem = 0;
         }
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)

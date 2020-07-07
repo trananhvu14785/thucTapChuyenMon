@@ -111,14 +111,14 @@
             series1.BorderWidth = 5;
             series1.ChartArea = "ChartArea1";
             series1.IsValueShownAsLabel = true;
-            series1.LabelFormat = "C";
+            series1.LabelFormat = "###.###";
             series1.Legend = "Legend1";
             series1.Name = "Vốn";
             series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int64;
             series2.BorderWidth = 5;
             series2.ChartArea = "ChartArea1";
             series2.IsValueShownAsLabel = true;
-            series2.LabelFormat = "C";
+            series2.LabelFormat = "###.###";
             series2.Legend = "Legend1";
             series2.Name = "Doanh Thu";
             series2.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int64;

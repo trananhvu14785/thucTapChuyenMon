@@ -544,8 +544,8 @@ namespace QuanLyBoSua
             dtgvChuongTrai.ClearSelection();
             loadTrangThai();
             txMaBoTk.Text = "";
-            ((DataTable)dtgvChuongTrai.DataSource).Rows.Clear();
-            getTenCHuong();
+            
+          //  getTenCHuong();
             dem = 0;
             btnSua.Enabled = true;
             btnXoa.Enabled = true;

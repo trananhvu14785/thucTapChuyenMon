@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThucAn));
             this.lbThucAn = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.dgvThucAn = new Bunifu.Framework.UI.BunifuCustomDataGrid();
@@ -75,18 +75,19 @@
             // dgvThucAn
             // 
             this.dgvThucAn.AllowUserToAddRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgvThucAn.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvThucAn.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvThucAn.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvThucAn.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvThucAn.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Cyan;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvThucAn.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Cyan;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvThucAn.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvThucAn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvThucAn.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.mathucan,
@@ -99,6 +100,7 @@
             this.dgvThucAn.Location = new System.Drawing.Point(35, 237);
             this.dgvThucAn.Margin = new System.Windows.Forms.Padding(2);
             this.dgvThucAn.Name = "dgvThucAn";
+            this.dgvThucAn.ReadOnly = true;
             this.dgvThucAn.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvThucAn.RowHeadersWidth = 51;
             this.dgvThucAn.RowTemplate.Height = 24;
@@ -113,6 +115,7 @@
             this.mathucan.HeaderText = "Mã thức ăn";
             this.mathucan.MinimumWidth = 6;
             this.mathucan.Name = "mathucan";
+            this.mathucan.ReadOnly = true;
             // 
             // tenthucan
             // 
@@ -121,6 +124,7 @@
             this.tenthucan.HeaderText = "Tên thức ăn";
             this.tenthucan.MinimumWidth = 6;
             this.tenthucan.Name = "tenthucan";
+            this.tenthucan.ReadOnly = true;
             // 
             // lbTenThucAn
             // 
@@ -400,6 +404,7 @@
             this.bunifuImageButton2.TabIndex = 9;
             this.bunifuImageButton2.TabStop = false;
             this.bunifuImageButton2.Zoom = 10;
+            this.bunifuImageButton2.Click += new System.EventHandler(this.bunifuImageButton2_Click);
             // 
             // panel1
             // 

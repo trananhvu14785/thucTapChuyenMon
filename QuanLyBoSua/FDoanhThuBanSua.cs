@@ -113,16 +113,16 @@ namespace QuanLyBoSua
             try
             {
                 
-                    string query = "select H.maHD,H.maNv,H.ngayMua,K.tenKH,H.SlSuaBan,H.tienSua1lit,H.thanhTien" +
+                    string query = "select H.maHD,H.maNv,H.ngayMua,K.tenKH,H.SlSuaBan,PARSENAME(CONVERT(varchar, CAST(H.tienSua1lit AS money), 1), 2)as tienSua1lit ,PARSENAME(CONVERT(varchar, CAST(H.thanhTien AS money), 1), 2)as thanhTien" +
                   " from HDBanSua H,KhachHang K where H.maKH = K.maKH " +
                   "and H.ngayMua between N'" + dtpkTuNgay.Value + "' and N'" + dtpkDenNgay.Value + "' ";
-                string query1 = "select sum(thanhTien) as thanhTien from HDBanSua where ngayMua between N'" + dtpkTuNgay.Value + "' and N'" + dtpkDenNgay.Value + "'";
+                string query1 = "select PARSENAME(CONVERT(varchar, CAST(sum(thanhTien) AS money), 1), 2)as thanhTien from HDBanSua where ngayMua between N'" + dtpkTuNgay.Value + "' and N'" + dtpkDenNgay.Value + "'";
                 string query2 = "Select N'" + dtpkTuNgay.Value + "' as tuNgay ,N'" + dtpkDenNgay.Value + "' as denNgay";
                 DataTable data = KetNoi.Istance.ExcuteQuerry(query);
                 DataTable data1 = KetNoi.Istance.ExcuteQuerry(query1);
                 DataTable data2 = KetNoi.Istance.ExcuteQuerry(query2);
                 ReportDataSource rds = new ReportDataSource("DataSet1", data);
-                ReportDataSource rds1 = new ReportDataSource("DataSet2", data1);
+                ReportDataSource rds1 = new ReportDataSource("DataSet4", data1);
                 ReportDataSource rds2 = new ReportDataSource("DataSet3", data2);
                 reportViewer1.LocalReport.DataSources.Clear();
                 reportViewer1.LocalReport.DataSources.Add(rds);
@@ -170,7 +170,7 @@ namespace QuanLyBoSua
             }
             else
             {
-                FGuiMailDoanhThu fGuiMailDoanhThu = new FGuiMailDoanhThu(path, dtpkTuNgay.Value.ToString(), dtpkDenNgay.Value.ToString(), "Bán Sữa");
+                FGuiMailDoanhThu fGuiMailDoanhThu = new FGuiMailDoanhThu(path, dtpkTuNgay.Value.ToString(), dtpkDenNgay.Value.ToString(), "Doanh Thu Bán Sữa");
                 fGuiMailDoanhThu.ShowDialog();
             }
         }

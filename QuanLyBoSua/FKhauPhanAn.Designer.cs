@@ -90,10 +90,11 @@
             // bunifuImageButton2
             // 
             this.bunifuImageButton2.BackColor = System.Drawing.Color.Teal;
+            this.bunifuImageButton2.BackgroundImage = global::QuanLyBoSua.Properties.Resources.Cancel;
+            this.bunifuImageButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.bunifuImageButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuImageButton2.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton2.Image")));
             this.bunifuImageButton2.ImageActive = null;
-            this.bunifuImageButton2.Location = new System.Drawing.Point(663, 0);
+            this.bunifuImageButton2.Location = new System.Drawing.Point(660, 3);
             this.bunifuImageButton2.Name = "bunifuImageButton2";
             this.bunifuImageButton2.Size = new System.Drawing.Size(22, 25);
             this.bunifuImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

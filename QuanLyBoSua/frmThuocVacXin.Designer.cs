@@ -72,6 +72,7 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dgvThuoc.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvThuoc.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvThuoc.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvThuoc.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.Cyan;
@@ -95,6 +96,7 @@
             this.dgvThuoc.Location = new System.Drawing.Point(11, 293);
             this.dgvThuoc.Margin = new System.Windows.Forms.Padding(2);
             this.dgvThuoc.Name = "dgvThuoc";
+            this.dgvThuoc.ReadOnly = true;
             this.dgvThuoc.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvThuoc.RowHeadersWidth = 51;
             this.dgvThuoc.RowTemplate.Height = 24;
@@ -108,6 +110,7 @@
             this.maThuoc.HeaderText = "Mã thuốc";
             this.maThuoc.MinimumWidth = 6;
             this.maThuoc.Name = "maThuoc";
+            this.maThuoc.ReadOnly = true;
             this.maThuoc.Width = 125;
             // 
             // tenThuoc
@@ -116,6 +119,7 @@
             this.tenThuoc.HeaderText = "Tên thuốc";
             this.tenThuoc.MinimumWidth = 6;
             this.tenThuoc.Name = "tenThuoc";
+            this.tenThuoc.ReadOnly = true;
             this.tenThuoc.Width = 125;
             // 
             // DVT
@@ -124,6 +128,7 @@
             this.DVT.HeaderText = "Đơn vị tính";
             this.DVT.MinimumWidth = 6;
             this.DVT.Name = "DVT";
+            this.DVT.ReadOnly = true;
             this.DVT.Width = 125;
             // 
             // SoLuongCon
@@ -133,6 +138,7 @@
             this.SoLuongCon.HeaderText = "Số lượng còn";
             this.SoLuongCon.MinimumWidth = 6;
             this.SoLuongCon.Name = "SoLuongCon";
+            this.SoLuongCon.ReadOnly = true;
             // 
             // lbThuoc
             // 
@@ -470,6 +476,7 @@
             this.bunifuImageButton2.TabIndex = 9;
             this.bunifuImageButton2.TabStop = false;
             this.bunifuImageButton2.Zoom = 10;
+            this.bunifuImageButton2.Click += new System.EventHandler(this.bunifuImageButton2_Click);
             // 
             // bunifuImageButton1
             // 

@@ -74,13 +74,6 @@
             this.dtpkNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.dtgvNhanVien = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton3 = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -132,6 +125,13 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txTongCho = new System.Windows.Forms.TextBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
@@ -270,7 +270,7 @@
             this.bunifuFlatButton1.IconRightVisible = false;
             this.bunifuFlatButton1.IconRightZoom = 0D;
             this.bunifuFlatButton1.IconVisible = false;
-            this.bunifuFlatButton1.IconZoom = 60D;
+            this.bunifuFlatButton1.IconZoom = 50D;
             this.bunifuFlatButton1.IsTab = false;
             this.bunifuFlatButton1.Location = new System.Drawing.Point(434, 192);
             this.bunifuFlatButton1.Margin = new System.Windows.Forms.Padding(4);
@@ -307,7 +307,7 @@
             this.btnLuu.IconRightVisible = false;
             this.btnLuu.IconRightZoom = 0D;
             this.btnLuu.IconVisible = false;
-            this.btnLuu.IconZoom = 60D;
+            this.btnLuu.IconZoom = 50D;
             this.btnLuu.IsTab = false;
             this.btnLuu.Location = new System.Drawing.Point(340, 192);
             this.btnLuu.Margin = new System.Windows.Forms.Padding(4);
@@ -344,7 +344,7 @@
             this.btnXoa.IconRightVisible = false;
             this.btnXoa.IconRightZoom = 0D;
             this.btnXoa.IconVisible = false;
-            this.btnXoa.IconZoom = 60D;
+            this.btnXoa.IconZoom = 50D;
             this.btnXoa.IsTab = false;
             this.btnXoa.Location = new System.Drawing.Point(236, 192);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(4);
@@ -381,7 +381,7 @@
             this.btnSua.IconRightVisible = false;
             this.btnSua.IconRightZoom = 0D;
             this.btnSua.IconVisible = false;
-            this.btnSua.IconZoom = 60D;
+            this.btnSua.IconZoom = 50D;
             this.btnSua.IsTab = false;
             this.btnSua.Location = new System.Drawing.Point(135, 192);
             this.btnSua.Margin = new System.Windows.Forms.Padding(4);
@@ -418,7 +418,7 @@
             this.btnThem.IconRightVisible = false;
             this.btnThem.IconRightZoom = 0D;
             this.btnThem.IconVisible = false;
-            this.btnThem.IconZoom = 60D;
+            this.btnThem.IconZoom = 50D;
             this.btnThem.IsTab = false;
             this.btnThem.Location = new System.Drawing.Point(34, 192);
             this.btnThem.Margin = new System.Windows.Forms.Padding(4);
@@ -711,69 +711,6 @@
             this.dtgvNhanVien.TabIndex = 3;
             this.dtgvNhanVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvNhanVien_CellClick);
             // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "maNv";
-            this.Column1.HeaderText = "Mã NV";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 80;
-            // 
-            // Column2
-            // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column2.DataPropertyName = "tenNv";
-            this.Column2.HeaderText = "Tên NV";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "ngaySinh";
-            this.Column3.HeaderText = "Ngày sinh";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 120;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "gioiTinh";
-            this.Column4.HeaderText = "Giới tính";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Width = 125;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "ngayVaoLam";
-            this.Column5.HeaderText = "Ngày vào làm";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Width = 130;
-            // 
-            // Column6
-            // 
-            this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column6.DataPropertyName = "eMail";
-            this.Column6.HeaderText = "Email";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            // 
-            // Column7
-            // 
-            this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column7.DataPropertyName = "anh";
-            this.Column7.HeaderText = "Ảnh";
-            this.Column7.MinimumWidth = 6;
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.bunifuFlatButton2);
@@ -812,7 +749,7 @@
             this.bunifuFlatButton2.IconRightVisible = false;
             this.bunifuFlatButton2.IconRightZoom = 0D;
             this.bunifuFlatButton2.IconVisible = false;
-            this.bunifuFlatButton2.IconZoom = 60D;
+            this.bunifuFlatButton2.IconZoom = 50D;
             this.bunifuFlatButton2.IsTab = false;
             this.bunifuFlatButton2.Location = new System.Drawing.Point(726, 227);
             this.bunifuFlatButton2.Margin = new System.Windows.Forms.Padding(5);
@@ -849,7 +786,7 @@
             this.bunifuFlatButton3.IconRightVisible = false;
             this.bunifuFlatButton3.IconRightZoom = 0D;
             this.bunifuFlatButton3.IconVisible = false;
-            this.bunifuFlatButton3.IconZoom = 60D;
+            this.bunifuFlatButton3.IconZoom = 50D;
             this.bunifuFlatButton3.IsTab = false;
             this.bunifuFlatButton3.Location = new System.Drawing.Point(633, 227);
             this.bunifuFlatButton3.Margin = new System.Windows.Forms.Padding(5);
@@ -886,7 +823,7 @@
             this.btnXoaPQ.IconRightVisible = false;
             this.btnXoaPQ.IconRightZoom = 0D;
             this.btnXoaPQ.IconVisible = false;
-            this.btnXoaPQ.IconZoom = 60D;
+            this.btnXoaPQ.IconZoom = 50D;
             this.btnXoaPQ.IsTab = false;
             this.btnXoaPQ.Location = new System.Drawing.Point(521, 227);
             this.btnXoaPQ.Margin = new System.Windows.Forms.Padding(5);
@@ -923,7 +860,7 @@
             this.btnThemPQ.IconRightVisible = false;
             this.btnThemPQ.IconRightZoom = 0D;
             this.btnThemPQ.IconVisible = false;
-            this.btnThemPQ.IconZoom = 60D;
+            this.btnThemPQ.IconZoom = 50D;
             this.btnThemPQ.IsTab = false;
             this.btnThemPQ.Location = new System.Drawing.Point(413, 227);
             this.btnThemPQ.Margin = new System.Windows.Forms.Padding(5);
@@ -1113,16 +1050,16 @@
             this.bunifuFlatButton5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuFlatButton5.DisabledColor = System.Drawing.Color.Gray;
             this.bunifuFlatButton5.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton5.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton5.Iconimage")));
+            this.bunifuFlatButton5.Iconimage = global::QuanLyBoSua.Properties.Resources.huy;
             this.bunifuFlatButton5.Iconimage_right = null;
             this.bunifuFlatButton5.Iconimage_right_Selected = null;
             this.bunifuFlatButton5.Iconimage_Selected = null;
             this.bunifuFlatButton5.IconMarginLeft = 0;
             this.bunifuFlatButton5.IconMarginRight = 0;
             this.bunifuFlatButton5.IconRightVisible = false;
-            this.bunifuFlatButton5.IconRightZoom = 0D;
+            this.bunifuFlatButton5.IconRightZoom = 50D;
             this.bunifuFlatButton5.IconVisible = false;
-            this.bunifuFlatButton5.IconZoom = 90D;
+            this.bunifuFlatButton5.IconZoom = 50D;
             this.bunifuFlatButton5.IsTab = false;
             this.bunifuFlatButton5.Location = new System.Drawing.Point(318, 393);
             this.bunifuFlatButton5.Margin = new System.Windows.Forms.Padding(4);
@@ -1156,9 +1093,9 @@
             this.bunifuFlatButton4.IconMarginLeft = 0;
             this.bunifuFlatButton4.IconMarginRight = 0;
             this.bunifuFlatButton4.IconRightVisible = false;
-            this.bunifuFlatButton4.IconRightZoom = 0D;
+            this.bunifuFlatButton4.IconRightZoom = 50D;
             this.bunifuFlatButton4.IconVisible = false;
-            this.bunifuFlatButton4.IconZoom = 61D;
+            this.bunifuFlatButton4.IconZoom = 50D;
             this.bunifuFlatButton4.IsTab = false;
             this.bunifuFlatButton4.Location = new System.Drawing.Point(224, 393);
             this.bunifuFlatButton4.Margin = new System.Windows.Forms.Padding(5);
@@ -1194,7 +1131,7 @@
             this.btnDel.IconRightVisible = false;
             this.btnDel.IconRightZoom = 0D;
             this.btnDel.IconVisible = false;
-            this.btnDel.IconZoom = 61D;
+            this.btnDel.IconZoom = 50D;
             this.btnDel.IsTab = false;
             this.btnDel.Location = new System.Drawing.Point(10, 393);
             this.btnDel.Margin = new System.Windows.Forms.Padding(5);
@@ -1230,7 +1167,7 @@
             this.bunifuFlatButton6.IconRightVisible = false;
             this.bunifuFlatButton6.IconRightZoom = 0D;
             this.bunifuFlatButton6.IconVisible = false;
-            this.bunifuFlatButton6.IconZoom = 61D;
+            this.bunifuFlatButton6.IconZoom = 50D;
             this.bunifuFlatButton6.IsTab = false;
             this.bunifuFlatButton6.Location = new System.Drawing.Point(101, 393);
             this.bunifuFlatButton6.Margin = new System.Windows.Forms.Padding(5);
@@ -1561,6 +1498,69 @@
             this.txTongCho.TabIndex = 86;
             this.txTongCho.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txTongCho_KeyPress);
             // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "maNv";
+            this.Column1.HeaderText = "Mã NV";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 80;
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column2.DataPropertyName = "tenNv";
+            this.Column2.HeaderText = "Tên NV";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "ngaySinh";
+            this.Column3.HeaderText = "Ngày sinh";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 120;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "gioiTinh";
+            this.Column4.HeaderText = "Giới tính";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 125;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "ngayVaoLam";
+            this.Column5.HeaderText = "Ngày vào làm";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 130;
+            // 
+            // Column6
+            // 
+            this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column6.DataPropertyName = "eMail";
+            this.Column6.HeaderText = "Email";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column7.DataPropertyName = "anh";
+            this.Column7.HeaderText = "Ảnh";
+            this.Column7.MinimumWidth = 6;
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            // 
             // FDanhMuc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1632,13 +1632,6 @@
         private System.Windows.Forms.TextBox txTimKiem;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.LinkLabel linkLb;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txTimKiemPQ;
@@ -1695,5 +1688,12 @@
         private Bunifu.Framework.UI.BunifuFlatButton btnDel;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton6;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
     }
 }

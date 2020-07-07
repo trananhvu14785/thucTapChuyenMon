@@ -173,6 +173,7 @@ namespace QuanLyBoSua
             txSoluong.ResetText();
             btnThem.Enabled = false;
             btnSua.Enabled = false;
+            dtgvVatSua.Enabled = false;
             btnXoa.Enabled = false;
 
         }
@@ -192,6 +193,7 @@ namespace QuanLyBoSua
                 cbMaBo.Enabled = false;
                 btnThem.Enabled = false;
                 btnSua.Enabled = false;
+                dtgvVatSua.Enabled = false;
                 btnXoa.Enabled = false;
             }
         }
@@ -247,6 +249,7 @@ namespace QuanLyBoSua
                         txSoluong.ResetText();
                         dem = 0;
                         btnThem.Enabled = true;
+                        dtgvVatSua.Enabled = true;
                         btnSua.Enabled = true;
                         btnXoa.Enabled = true;
                     }
@@ -273,6 +276,7 @@ namespace QuanLyBoSua
                         btnThem.Enabled = true;
                         btnSua.Enabled = true;
                         btnXoa.Enabled = true;
+                        dtgvVatSua.Enabled = true;
                     }
                 }
             }
@@ -292,6 +296,7 @@ namespace QuanLyBoSua
             txTimKiem.ResetText();
             cbMaBo.Enabled = true;
             dtpkNgayLay.Enabled = false;
+            dtgvVatSua.Enabled = true;
             loadListLaySua();
             btnThem.Enabled = true;
             btnSua.Enabled = true;

@@ -143,6 +143,7 @@ namespace QuanLyBoSua
             btnThem.Enabled = false;
             btnSua.Enabled = false;
             btnXoa.Enabled = false;
+            dtgvKPA.Enabled = false;
         }
 
         private void btnSua_Click_1(object sender, EventArgs e)
@@ -155,6 +156,7 @@ namespace QuanLyBoSua
             else
             {
                 dem = 2;
+                dtgvKPA.Enabled = false;
                 panelKPA.Enabled = true;
                 cbMaBo.Enabled = false;
                 btnThem.Enabled = false;
@@ -179,6 +181,7 @@ namespace QuanLyBoSua
                     Alert a = new Alert("Xóa thành công.", AlertType.success);
                     a.ShowDialog();
                     LoadListKhauPhanAn();
+                    txMaKp.ResetText();
                     numSoLuong.Value = 0;
                 }
                 catch
@@ -212,10 +215,12 @@ namespace QuanLyBoSua
                             LoadListKhauPhanAn();
                             dem = 0;
                             numSoLuong.Value = 0;
+                            txMaKp.ResetText();
                             panelKPA.Enabled = false;
                             btnThem.Enabled = true;
                             btnSua.Enabled = true;
                             btnXoa.Enabled = true;
+                            dtgvKPA.Enabled = true;
 
                         }
                     }
@@ -241,8 +246,10 @@ namespace QuanLyBoSua
                         LoadListKhauPhanAn();
                         dem = 0;
                         numSoLuong.Value = 0;
+                        txMaKp.ResetText();
                         panelKPA.Enabled = false;
                         cbMaBo.Enabled = true;
+                        dtgvKPA.Enabled = true;
                         btnThem.Enabled = true;
                         btnSua.Enabled = true;
                         btnXoa.Enabled = true;
@@ -264,6 +271,7 @@ namespace QuanLyBoSua
             dtgvKPA.ClearSelection();
             LoadListKhauPhanAn();
             dem = 0;
+            dtgvKPA.Enabled = true;
             txMaKp.Text = "";
             txTimKiem.Text = "";
             cbMaBo.Enabled = true;

@@ -379,6 +379,7 @@ namespace QuanLyBoSua
                 dem = 0;
                 dtgvHD.ClearSelection();
                 btnSua.Enabled = true;
+                btnLuu.Enabled = true;
                 btnXoa.Enabled = true;
                 btnThem.Enabled = true;
             }

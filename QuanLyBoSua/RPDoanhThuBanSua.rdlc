@@ -807,7 +807,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Sum(Fields!thanhTien.Value, "DataSet2")</Value>
+                <Value>=First(Fields!thanhTien.Value, "DataSet4")</Value>
                 <Style>
                   <FontWeight>Bold</FontWeight>
                   <TextDecoration>Underline</TextDecoration>
@@ -1094,26 +1094,6 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSet2">
-      <Query>
-        <DataSourceName>QuanLyBoSuaDataSet8</DataSourceName>
-        <CommandText>/* Local Query */</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="thanhTien">
-          <DataField>thanhTien</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-      </Fields>
-      <rd:DataSetInfo>
-        <rd:DataSetName>QuanLyBoSuaDataSet8</rd:DataSetName>
-        <rd:SchemaPath>E:\API\QuanLyBoSua\QuanLyBoSua\QuanLyBoSuaDataSet8.xsd</rd:SchemaPath>
-        <rd:TableName>getTien</rd:TableName>
-        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
-        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>getTienTableAdapter</rd:TableAdapterName>
-      </rd:DataSetInfo>
-    </DataSet>
     <DataSet Name="DataSet3">
       <Query>
         <DataSourceName>QuanLyBoSuaDataSet9</DataSourceName>
@@ -1180,6 +1160,26 @@
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
         <rd:TableAdapterName>getHdBanSuaTableAdapter</rd:TableAdapterName>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="DataSet4">
+      <Query>
+        <DataSourceName>QuanLyBoSuaDataSet5</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="thanhTien">
+          <DataField>thanhTien</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>QuanLyBoSuaDataSet5</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\Admin\Source\Repos\trananhvu14785\thucTapChuyenMon\QuanLyBoSua\QuanLyBoSuaDataSet5.xsd</rd:SchemaPath>
+        <rd:TableName>getTien</rd:TableName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>getTienTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>

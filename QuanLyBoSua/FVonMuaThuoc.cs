@@ -36,8 +36,8 @@ namespace QuanLyBoSua
         {
             try
             {
-                string query = "Select H.maHD,N.tenNCC,H.maNv,H.ngayLap,H.tongTien from HoaDonNhapThuoc H,NhaCungCap N where H.maNCC=N.maNCC and H.ngayLap between N'" + dtpkTuNgay.Text + " 00:00:00' and N'" + dtpkDenNgay.Text + " 23:59:59'";
-                string query1 = "select sum(tongTien) as thanhTien from HoaDonNhapThuoc where ngayLap between N'" + dtpkTuNgay.Text + " 00:00:00' and N'" + dtpkDenNgay.Text + " 23:59:59'";
+                string query = "Select H.maHD,N.tenNCC,H.maNv,H.ngayLap, PARSENAME(CONVERT(varchar, CAST(H.tongTien AS money), 1), 2)as tongTien from HoaDonNhapThuoc H,NhaCungCap N where H.maNCC=N.maNCC and H.ngayLap between N'" + dtpkTuNgay.Text + " 00:00:00' and N'" + dtpkDenNgay.Text + " 23:59:59'";
+                string query1 = "select  PARSENAME(CONVERT(varchar, CAST(sum(tongTien) AS money), 1), 2)as thanhTien from HoaDonNhapThuoc where ngayLap between N'" + dtpkTuNgay.Text + " 00:00:00' and N'" + dtpkDenNgay.Text + " 23:59:59'";
                 string query2 = "Select N'" + dtpkTuNgay.Value + "' as tuNgay ,N'" + dtpkDenNgay.Value + "' as denNgay";
                 DataTable data = KetNoi.Istance.ExcuteQuerry(query);
                 DataTable data1 = KetNoi.Istance.ExcuteQuerry(query1);
@@ -108,7 +108,7 @@ namespace QuanLyBoSua
                                "</DeviceInfo>";
                             byte[] bytes = reportViewer1.LocalReport.Render(
                           "PDF", deviceInfo);
-                            FileStream fs = new FileStream(@"E:\API\File\VonMuaThuoc.pdf", FileMode.Create);
+                            FileStream fs = new FileStream(saveFileDialog.FileName, FileMode.Create);
 
                             fs.Write(bytes, 0, bytes.Length);
 
@@ -138,8 +138,7 @@ namespace QuanLyBoSua
 
         private void bunifuThinButton23_Click(object sender, EventArgs e)
         {
-            try
-            {
+           
 
                 if (path == "")
                 {
@@ -148,26 +147,10 @@ namespace QuanLyBoSua
                 }
                 else
                 {
-                    SmtpClient mailclient = new SmtpClient("smtp.gmail.com", 587);
-                    mailclient.EnableSsl = true;
-                    mailclient.Credentials = new NetworkCredential("hoanglaptrinh6399@gmail.com", "dinhhoang0603");
-
-                    MailMessage message = new MailMessage("hoanglaptrinh6399@gmail.com", "trumpbaby6969@gmail.com");
-                    message.Subject = "BÁO CÁO VỐN MUA THUÔC";
-                    message.Body = "Gửi admin báo cáo vốn mua thuốc từ ngày " + dtpkTuNgay.Value.ToString() + " đến ngày " + dtpkDenNgay.Value.ToString();
-                    message.Attachments.Add(new Attachment(Convert.ToString(path)));
-
-                    mailclient.Send(message);
-                    message = null;
-                    Alert a = new Alert("Mail đã được gửi đi!", AlertType.success);
-                    a.ShowDialog();
+                    FGuiMailDoanhThu fGuiMailDoanhThu = new FGuiMailDoanhThu(path, dtpkTuNgay.Value.ToString(), dtpkDenNgay.Value.ToString(), "Vốn Mua Thuốc-Vắc Xin");
+                    fGuiMailDoanhThu.ShowDialog();
                 }
-            }
-            catch
-            {
-                Alert a = new Alert("Báo cáo chưa được gửi do lỗi mạng!", AlertType.info);
-                a.ShowDialog();
-            }
+           
         }
     }
 }

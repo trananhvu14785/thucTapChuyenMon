@@ -70,6 +70,7 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dgvKhachHang.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvKhachHang.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvKhachHang.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvKhachHang.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.Cyan;
@@ -93,6 +94,7 @@
             this.dgvKhachHang.HeaderForeColor = System.Drawing.Color.Black;
             this.dgvKhachHang.Location = new System.Drawing.Point(12, 269);
             this.dgvKhachHang.Name = "dgvKhachHang";
+            this.dgvKhachHang.ReadOnly = true;
             this.dgvKhachHang.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvKhachHang.RowHeadersWidth = 51;
             this.dgvKhachHang.RowTemplate.Height = 24;
@@ -106,6 +108,7 @@
             this.maKh.HeaderText = "Mã Khách hàng";
             this.maKh.MinimumWidth = 6;
             this.maKh.Name = "maKh";
+            this.maKh.ReadOnly = true;
             this.maKh.Width = 125;
             // 
             // tenKh
@@ -115,6 +118,7 @@
             this.tenKh.HeaderText = "Tên khách hàng";
             this.tenKh.MinimumWidth = 6;
             this.tenKh.Name = "tenKh";
+            this.tenKh.ReadOnly = true;
             // 
             // email
             // 
@@ -122,6 +126,7 @@
             this.email.HeaderText = "Email";
             this.email.MinimumWidth = 6;
             this.email.Name = "email";
+            this.email.ReadOnly = true;
             this.email.Width = 125;
             // 
             // sdt
@@ -130,6 +135,7 @@
             this.sdt.HeaderText = "Số điện thoại";
             this.sdt.MinimumWidth = 6;
             this.sdt.Name = "sdt";
+            this.sdt.ReadOnly = true;
             this.sdt.Width = 125;
             // 
             // bunifuCustomLabel1
@@ -474,6 +480,7 @@
             this.bunifuImageButton2.TabIndex = 9;
             this.bunifuImageButton2.TabStop = false;
             this.bunifuImageButton2.Zoom = 10;
+            this.bunifuImageButton2.Click += new System.EventHandler(this.bunifuImageButton2_Click);
             // 
             // bunifuImageButton1
             // 

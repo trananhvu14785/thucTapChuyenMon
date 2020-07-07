@@ -130,6 +130,7 @@ namespace QuanLyBoSua
             btnThem.Enabled = false;
             btnSua.Enabled = false;
             btnXoa.Enabled = false;
+           
             dgvChuongTrai.Enabled = false;
         }
 
@@ -158,6 +159,7 @@ namespace QuanLyBoSua
                     a.ShowDialog();
                     setNull();
                     LoadData();
+                    dgvChuongTrai.Enabled = true;
                 }
                 catch
                 {
@@ -199,17 +201,7 @@ namespace QuanLyBoSua
                     decimal tongCho = 0;
 
                     string manv = tbMaNv.text;
-                    try
-                    {
-                        tongCho = decimal.Parse(tbTongCho.text);
-
-                    }
-                    catch
-                    {
-                        Alert a = new Alert("Tổng số chỗ hoặc số chỗ trống nhập không hợp lệ!", AlertType.error);
-                        a.ShowDialog();
-                        return;
-                    }
+                  
                     if (tbTenChuong.text == "" || tbTongCho.text == "" || tbMaNv.text == "")
                     {
                         Alert a = new Alert("Vui lòng nhập đủ thông tin!", AlertType.info);
@@ -230,7 +222,7 @@ namespace QuanLyBoSua
                         }
                         catch
                         {
-                            Alert a = new Alert("Tổng số chỗ hoặc số chỗ trống nhập không hợp lệ!", AlertType.error);
+                            Alert a = new Alert("Tổng số chỗ hoặc \n số chỗ trống nhập không hợp lệ!", AlertType.error);
                             a.ShowDialog();
                         }
                         try
@@ -333,6 +325,11 @@ namespace QuanLyBoSua
         private void bunifuImageButton2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

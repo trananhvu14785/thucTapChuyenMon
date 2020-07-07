@@ -43,6 +43,7 @@
             this.btnThem = new Bunifu.Framework.UI.BunifuFlatButton();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panelInfor = new System.Windows.Forms.Panel();
+            this.chbThue = new System.Windows.Forms.CheckBox();
             this.dtpkNgayNhap = new System.Windows.Forms.DateTimePicker();
             this.lbTenChuong = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -62,18 +63,17 @@
             this.lbTongSoCHo = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dtgvChuongTrai = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.maBo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.trongLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.trangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ngayNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txMaBoTk = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.paneltop = new System.Windows.Forms.Panel();
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.gunaTransition1 = new Guna.UI.WinForms.GunaTransition(this.components);
-            this.chbThue = new System.Windows.Forms.CheckBox();
+            this.maBo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.trongLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.trangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ngayNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             this.panelInfor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvChuongTrai)).BeginInit();
@@ -322,6 +322,19 @@
             this.panelInfor.Name = "panelInfor";
             this.panelInfor.Size = new System.Drawing.Size(622, 136);
             this.panelInfor.TabIndex = 3;
+            // 
+            // chbThue
+            // 
+            this.chbThue.AutoSize = true;
+            this.gunaTransition1.SetDecoration(this.chbThue, Guna.UI.Animation.DecorationType.None);
+            this.chbThue.Enabled = false;
+            this.chbThue.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbThue.Location = new System.Drawing.Point(539, 41);
+            this.chbThue.Name = "chbThue";
+            this.chbThue.Size = new System.Drawing.Size(56, 18);
+            this.chbThue.TabIndex = 21;
+            this.chbThue.Text = "Thuê";
+            this.chbThue.UseVisualStyleBackColor = true;
             // 
             // dtpkNgayNhap
             // 
@@ -582,39 +595,6 @@
             this.dtgvChuongTrai.TabIndex = 4;
             this.dtgvChuongTrai.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvChuongTrai_CellClick);
             // 
-            // maBo
-            // 
-            this.maBo.DataPropertyName = "maBo";
-            this.maBo.HeaderText = "Mã Bò";
-            this.maBo.Name = "maBo";
-            this.maBo.Width = 80;
-            // 
-            // gioiTinh
-            // 
-            this.gioiTinh.DataPropertyName = "gioiTinh";
-            this.gioiTinh.HeaderText = "Giới Tinh";
-            this.gioiTinh.Name = "gioiTinh";
-            // 
-            // trongLuong
-            // 
-            this.trongLuong.DataPropertyName = "trongLuong";
-            this.trongLuong.HeaderText = "Trọng Lượng";
-            this.trongLuong.Name = "trongLuong";
-            this.trongLuong.Width = 110;
-            // 
-            // trangThai
-            // 
-            this.trangThai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.trangThai.DataPropertyName = "CategoryName";
-            this.trangThai.HeaderText = "  Trạng Thái";
-            this.trangThai.Name = "trangThai";
-            // 
-            // ngayNhap
-            // 
-            this.ngayNhap.DataPropertyName = "ngayNhapChuong";
-            this.ngayNhap.HeaderText = "Ngày Nhập ";
-            this.ngayNhap.Name = "ngayNhap";
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.txMaBoTk);
@@ -699,18 +679,43 @@
             this.gunaTransition1.DefaultAnimation = animation1;
             this.gunaTransition1.Interval = 20;
             // 
-            // chbThue
+            // maBo
             // 
-            this.chbThue.AutoSize = true;
-            this.gunaTransition1.SetDecoration(this.chbThue, Guna.UI.Animation.DecorationType.None);
-            this.chbThue.Enabled = false;
-            this.chbThue.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbThue.Location = new System.Drawing.Point(539, 41);
-            this.chbThue.Name = "chbThue";
-            this.chbThue.Size = new System.Drawing.Size(56, 18);
-            this.chbThue.TabIndex = 21;
-            this.chbThue.Text = "Thuê";
-            this.chbThue.UseVisualStyleBackColor = true;
+            this.maBo.DataPropertyName = "maBo";
+            this.maBo.HeaderText = "Mã Bò";
+            this.maBo.Name = "maBo";
+            this.maBo.ReadOnly = true;
+            this.maBo.Width = 80;
+            // 
+            // gioiTinh
+            // 
+            this.gioiTinh.DataPropertyName = "gioiTinh";
+            this.gioiTinh.HeaderText = "Giới Tinh";
+            this.gioiTinh.Name = "gioiTinh";
+            this.gioiTinh.ReadOnly = true;
+            // 
+            // trongLuong
+            // 
+            this.trongLuong.DataPropertyName = "trongLuong";
+            this.trongLuong.HeaderText = "Trọng Lượng";
+            this.trongLuong.Name = "trongLuong";
+            this.trongLuong.ReadOnly = true;
+            this.trongLuong.Width = 110;
+            // 
+            // trangThai
+            // 
+            this.trangThai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.trangThai.DataPropertyName = "CategoryName";
+            this.trangThai.HeaderText = "  Trạng Thái";
+            this.trangThai.Name = "trangThai";
+            this.trangThai.ReadOnly = true;
+            // 
+            // ngayNhap
+            // 
+            this.ngayNhap.DataPropertyName = "ngayNhapChuong";
+            this.ngayNhap.HeaderText = "Ngày Nhập ";
+            this.ngayNhap.Name = "ngayNhap";
+            this.ngayNhap.ReadOnly = true;
             // 
             // FChuongTrai
             // 
@@ -767,11 +772,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn maBo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gioiTinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn trongLuong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn trangThai;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ngayNhap;
         private System.Windows.Forms.Label lbTenChuong;
         private System.Windows.Forms.DateTimePicker dtpkNgayNhap;
         private System.Windows.Forms.Panel paneltop;
@@ -783,5 +783,10 @@
         private Bunifu.Framework.UI.BunifuFlatButton btnHuy;
         private Guna.UI.WinForms.GunaTransition gunaTransition1;
         private System.Windows.Forms.CheckBox chbThue;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maBo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gioiTinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn trongLuong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn trangThai;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ngayNhap;
     }
 }

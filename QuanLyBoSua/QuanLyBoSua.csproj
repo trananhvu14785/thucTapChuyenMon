@@ -313,6 +313,26 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QuanLyBoSuaDataSet3.xsd</DependentUpon>
     </Compile>
+    <Compile Include="QuanLyBoSuaDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyBoSuaDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyBoSuaDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyBoSuaDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyBoSuaDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyBoSuaDataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyBoSuaDataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyBoSuaDataSet7.xsd</DependentUpon>
+    </Compile>
     <Compile Include="QuanLyBoSuaDataSet8.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -486,6 +506,50 @@
     </None>
     <None Include="QuanLyBoSuaDataSet3.xss">
       <DependentUpon>QuanLyBoSuaDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="QuanLyBoSuaDataSet4.xsc">
+      <DependentUpon>QuanLyBoSuaDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="QuanLyBoSuaDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanLyBoSuaDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QuanLyBoSuaDataSet4.xss">
+      <DependentUpon>QuanLyBoSuaDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="QuanLyBoSuaDataSet5.xsc">
+      <DependentUpon>QuanLyBoSuaDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="QuanLyBoSuaDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanLyBoSuaDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QuanLyBoSuaDataSet5.xss">
+      <DependentUpon>QuanLyBoSuaDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="QuanLyBoSuaDataSet6.xsc">
+      <DependentUpon>QuanLyBoSuaDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="QuanLyBoSuaDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanLyBoSuaDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QuanLyBoSuaDataSet6.xss">
+      <DependentUpon>QuanLyBoSuaDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="QuanLyBoSuaDataSet7.xsc">
+      <DependentUpon>QuanLyBoSuaDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="QuanLyBoSuaDataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanLyBoSuaDataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QuanLyBoSuaDataSet7.xss">
+      <DependentUpon>QuanLyBoSuaDataSet7.xsd</DependentUpon>
     </None>
     <None Include="QuanLyBoSuaDataSet8.xsc">
       <DependentUpon>QuanLyBoSuaDataSet8.xsd</DependentUpon>

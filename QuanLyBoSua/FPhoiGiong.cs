@@ -146,6 +146,7 @@ namespace QuanLyBoSua
             btnThem.Enabled = false;
             btnSua.Enabled = false;
             btnXoa.Enabled = false;
+            dtgvPhoiGiong.Enabled = false;
             if (MaNv != "")
             {
                 cbMaNv.Text = MaNv;
@@ -167,6 +168,7 @@ namespace QuanLyBoSua
                 cbMaBo.Enabled = false;
                 dtpkNgayPhoi.Enabled = true;
                 panelPG.Enabled = true;
+                dtgvPhoiGiong.Enabled = false;
                 btnThem.Enabled = false;
                 btnSua.Enabled = false;
                 btnXoa.Enabled = false;
@@ -218,6 +220,7 @@ namespace QuanLyBoSua
                         btnThem.Enabled = true;
                         btnSua.Enabled = true;
                         btnXoa.Enabled = true;
+                        dtgvPhoiGiong.Enabled = true;
 
                     }
                     catch
@@ -244,6 +247,7 @@ namespace QuanLyBoSua
                         btnThem.Enabled = true;
                         btnSua.Enabled = true;
                         btnXoa.Enabled = true;
+                        dtgvPhoiGiong.Enabled = true;
                     }
                     catch
                     {
@@ -270,6 +274,7 @@ namespace QuanLyBoSua
             loadListPhoiGiong();
             txTimKiem.ResetText();
             btnThem.Enabled = true;
+            dtgvPhoiGiong.Enabled = true;
             btnSua.Enabled = true;
             btnXoa.Enabled = true;
         }

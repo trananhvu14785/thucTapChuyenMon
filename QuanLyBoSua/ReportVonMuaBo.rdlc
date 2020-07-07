@@ -396,7 +396,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Sum(Fields!thanhTien.Value, "DataSet2")</Value>
+                <Value>=First(Fields!thanhTien.Value, "DataSet2")</Value>
                 <Style>
                   <FontWeight>Bold</FontWeight>
                   <TextDecoration>Underline</TextDecoration>
@@ -908,6 +908,13 @@
       </ConnectionProperties>
       <rd:DataSourceID>e7ce2e15-b0d9-4ad7-a5ea-0697cfe3255c</rd:DataSourceID>
     </DataSource>
+    <DataSource Name="QuanLyBoSuaDataSet6">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>54ae55c8-0fba-4376-b9ef-267bc5a8cab9</rd:DataSourceID>
+    </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="DataSet1">
@@ -946,26 +953,6 @@
         <rd:TableAdapterName>pr_HDNhapBoTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
-    <DataSet Name="DataSet2">
-      <Query>
-        <DataSourceName>QuanLyBoSuaDataSet8</DataSourceName>
-        <CommandText>/* Local Query */</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="thanhTien">
-          <DataField>thanhTien</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-      </Fields>
-      <rd:DataSetInfo>
-        <rd:DataSetName>QuanLyBoSuaDataSet8</rd:DataSetName>
-        <rd:SchemaPath>E:\API\QuanLyBoSua\QuanLyBoSua\QuanLyBoSuaDataSet8.xsd</rd:SchemaPath>
-        <rd:TableName>getTien</rd:TableName>
-        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
-        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>getTienTableAdapter</rd:TableAdapterName>
-      </rd:DataSetInfo>
-    </DataSet>
     <DataSet Name="DataSet3">
       <Query>
         <DataSourceName>QuanLyBoSuaDataSet9</DataSourceName>
@@ -988,6 +975,26 @@
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
         <rd:TableAdapterName>LayNgayTableAdapter</rd:TableAdapterName>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="DataSet2">
+      <Query>
+        <DataSourceName>QuanLyBoSuaDataSet6</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="thanhTien">
+          <DataField>thanhTien</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>QuanLyBoSuaDataSet6</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\Admin\Source\Repos\trananhvu14785\thucTapChuyenMon\QuanLyBoSua\QuanLyBoSuaDataSet6.xsd</rd:SchemaPath>
+        <rd:TableName>getTien</rd:TableName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>getTienTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>

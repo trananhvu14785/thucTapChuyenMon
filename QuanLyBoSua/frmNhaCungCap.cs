@@ -119,6 +119,7 @@ namespace QuanLyBoSua
             groupBox1.Enabled = true;
             setNull();
             btnThem.Enabled = false;
+            dgvNhaCungCap.Enabled = false;
             btnSua.Enabled = false;
             btnXoa.Enabled = false;
         }
@@ -138,6 +139,7 @@ namespace QuanLyBoSua
                 btnThem.Enabled = false;
                 btnSua.Enabled = false;
                 btnXoa.Enabled = false;
+                dgvNhaCungCap.Enabled = false;
             }
         }
 
@@ -217,6 +219,7 @@ namespace QuanLyBoSua
                             btnXoa.Enabled = true;
                             btnSua.Enabled = true;
                             btnThem.Enabled = true;
+                            dgvNhaCungCap.Enabled = true;
                             groupBox1.Enabled = false;
                         }
                         catch
@@ -271,6 +274,7 @@ namespace QuanLyBoSua
                             btnSua.Enabled = true;
                             btnThem.Enabled = true;
                             setNull();
+                            dgvNhaCungCap.Enabled = true;
                             dem = 0;
                             LoadData();
                             groupBox1.Enabled = false;
@@ -300,11 +304,17 @@ namespace QuanLyBoSua
             btnXoa.Enabled = true;
             btnSua.Enabled = true;
             btnThem.Enabled = true;
+            dgvNhaCungCap.Enabled = true;
         }
 
         private void quanLyBoSuaDataSetBindingSource_CurrentChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void bunifuImageButton2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

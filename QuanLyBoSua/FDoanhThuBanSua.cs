@@ -79,17 +79,16 @@ namespace QuanLyBoSua
                     }
                     if (!fileError)
                     {
-
                         string deviceInfo =
                       "<DeviceInfo>" +
-                      "  <OutputFormat>EMF</OutputFormat>" +
-                      "  <PageWidth>9in</PageWidth>" +
-                      "  <PageHeight>6in</PageHeight>" +
-                      "  <MarginTop>0.25in</MarginTop>" +
-                      "  <MarginLeft>0.25in</MarginLeft>" +
-                      "  <MarginRight>0.25in</MarginRight>" +
-                      "  <MarginBottom>0.25in</MarginBottom>" +
-                      "</DeviceInfo>";
+          "  <OutputFormat>EMF</OutputFormat>" +
+          "  <PageWidth>9.15in</PageWidth>" +
+          "  <PageHeight>11in</PageHeight>" +
+          "  <MarginTop>0.25in</MarginTop>" +
+          "  <MarginLeft>0.25in</MarginLeft>" +
+          "  <MarginRight>0.25in</MarginRight>" +
+          "  <MarginBottom>0.25in</MarginBottom>" +
+          "</DeviceInfo>";
                         byte[] bytes = reportViewer1.LocalReport.Render(
                            "PDF", deviceInfo);
                         FileStream fs = new FileStream(saveFileDialog.FileName, FileMode.Create);
@@ -115,9 +114,9 @@ namespace QuanLyBoSua
                 
                     string query = "select H.maHD,H.maNv,H.ngayMua,K.tenKH,H.SlSuaBan,PARSENAME(CONVERT(varchar, CAST(H.tienSua1lit AS money), 1), 2)as tienSua1lit ,PARSENAME(CONVERT(varchar, CAST(H.thanhTien AS money), 1), 2)as thanhTien" +
                   " from HDBanSua H,KhachHang K where H.maKH = K.maKH " +
-                  "and H.ngayMua between N'" + dtpkTuNgay.Value + "' and N'" + dtpkDenNgay.Value + "' ";
+                  "and H.ngayMua between N'" + dtpkTuNgay.Text + "' and N'" + dtpkDenNgay.Text + "' ";
                 string query1 = "select PARSENAME(CONVERT(varchar, CAST(sum(thanhTien) AS money), 1), 2)as thanhTien from HDBanSua where ngayMua between N'" + dtpkTuNgay.Value + "' and N'" + dtpkDenNgay.Value + "'";
-                string query2 = "Select N'" + dtpkTuNgay.Value + "' as tuNgay ,N'" + dtpkDenNgay.Value + "' as denNgay";
+                string query2 = "Select N'" + dtpkTuNgay.Text + "' as tuNgay ,N'" + dtpkDenNgay.Text + "' as denNgay";
                 DataTable data = KetNoi.Istance.ExcuteQuerry(query);
                 DataTable data1 = KetNoi.Istance.ExcuteQuerry(query1);
                 DataTable data2 = KetNoi.Istance.ExcuteQuerry(query2);

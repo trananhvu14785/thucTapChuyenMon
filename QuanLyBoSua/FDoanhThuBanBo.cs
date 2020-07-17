@@ -30,7 +30,7 @@ namespace QuanLyBoSua
             {
                 string query = "select H.maHd,K.tenKH,H.ngayMua,H.maNV,PARSENAME(CONVERT(varchar, CAST(H.thanhTien AS money), 1), 2)as thanhTien from HDBanBo H,KhachHang K where H.maKH=K.maKh and H.ngayMua between N'" + dtpkTuNgay.Value + "' and N'" + dtpkDenNgay.Value + "'";
                 string query1 = "select PARSENAME(CONVERT(varchar, CAST(sum(thanhTien) AS money), 1), 2)as thanhTien from HDBanBo where ngayMua between N'" + dtpkTuNgay.Text + " 00:00:00' and N'" + dtpkDenNgay.Text + " 23:59:59'";
-                string query2 = "Select N'" + dtpkTuNgay.Value + "' as tuNgay ,N'" + dtpkDenNgay.Value + "' as denNgay";
+                string query2 = "Select N'" + dtpkTuNgay.Text + "' as tuNgay ,N'" + dtpkDenNgay.Text + "' as denNgay";
                 DataTable data = KetNoi.Istance.ExcuteQuerry(query);
                 DataTable data1 = KetNoi.Istance.ExcuteQuerry(query1);
 
@@ -94,8 +94,8 @@ namespace QuanLyBoSua
                         string deviceInfo =
                  "<DeviceInfo>" +
                  "  <OutputFormat>EMF</OutputFormat>" +
-                 "  <PageWidth>9in</PageWidth>" +
-                 "  <PageHeight>6in</PageHeight>" +
+                 "  <PageWidth>9.5in</PageWidth>" +
+                 "  <PageHeight>11.5in</PageHeight>" +
                  "  <MarginTop>0.25in</MarginTop>" +
                  "  <MarginLeft>0.25in</MarginLeft>" +
                  "  <MarginRight>0.25in</MarginRight>" +

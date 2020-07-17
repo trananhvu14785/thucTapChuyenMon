@@ -227,7 +227,8 @@
             animation1.TimeCoeff = 0F;
             animation1.TransparencyCoeff = 0F;
             this.gunaTransition1.DefaultAnimation = animation1;
-            this.gunaTransition1.Interval = 4;
+            this.gunaTransition1.Interval = 2;
+            this.gunaTransition1.MaxAnimationTime = 1000;
             // 
             // gunaGradientButton2
             // 

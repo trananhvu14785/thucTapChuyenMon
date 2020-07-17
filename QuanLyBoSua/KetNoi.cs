@@ -11,7 +11,7 @@ namespace QuanLyBoSua
     public class KetNoi
     {
         private static KetNoi instance;
-        private string connStr = "Data Source=DESKTOP-PFHMF67;Initial Catalog=QuanLyBoSua;Persist Security Info=True;User ID=sa;Password=123";
+        private string connStr = "Data Source=.;Initial Catalog=QuanLyBoSua;Integrated Security=True";
         public static KetNoi Istance
         {
             get

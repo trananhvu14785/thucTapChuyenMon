@@ -38,7 +38,7 @@ namespace QuanLyBoSua
             {
                 string query = "Select H.maHD,N.tenNCC,H.maNv,H.ngayLap, PARSENAME(CONVERT(varchar, CAST(H.tongTien AS money), 1), 2)as tongTien from HoaDonNhapThuoc H,NhaCungCap N where H.maNCC=N.maNCC and H.ngayLap between N'" + dtpkTuNgay.Text + " 00:00:00' and N'" + dtpkDenNgay.Text + " 23:59:59'";
                 string query1 = "select  PARSENAME(CONVERT(varchar, CAST(sum(tongTien) AS money), 1), 2)as thanhTien from HoaDonNhapThuoc where ngayLap between N'" + dtpkTuNgay.Text + " 00:00:00' and N'" + dtpkDenNgay.Text + " 23:59:59'";
-                string query2 = "Select N'" + dtpkTuNgay.Value + "' as tuNgay ,N'" + dtpkDenNgay.Value + "' as denNgay";
+                string query2 = "Select N'" + dtpkTuNgay.Text + "' as tuNgay ,N'" + dtpkDenNgay.Text + "' as denNgay";
                 DataTable data = KetNoi.Istance.ExcuteQuerry(query);
                 DataTable data1 = KetNoi.Istance.ExcuteQuerry(query1);
                 DataTable data2 = KetNoi.Istance.ExcuteQuerry(query2);

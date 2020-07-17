@@ -18,8 +18,8 @@ namespace QuanLyBoSua
             InitializeComponent();
             // txtTenDn.Text = "admin";
             //   txPass.Text = "123";
-            panel3.Hide();
-            gunaTransition1.Show(panel3);
+            panel1.Hide();
+            gunaTransition1.Show(panel1);
         }
         //public string MaHoaMK(string password)
         //{

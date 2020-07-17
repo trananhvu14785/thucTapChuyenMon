@@ -195,7 +195,7 @@ namespace QuanLyBoSua
                 //DateTime dt = Convert.ToDateTime(dtgvChuongTrai.Rows[numrow].Cells[4].Value.ToString());
                 //dtpkNgayNhap.Value = dt;
                 cbTenChuong.Text = getTenChuongFromId(txMaBo.Text);
-                lbTenChuong.Text = cbTenChuong.SelectedValue.ToString();
+                lbTenChuong.Text = cbTenChuong.Text;
                 if (kiemTraThue(txMaBo.Text))
                     chbThue.Checked = true;
                 else
@@ -351,12 +351,7 @@ namespace QuanLyBoSua
 
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
-            if (lbTongSoCHo.Text == "0")
-            {
-                Alert a = new Alert("Vui Lòng Chọn Chuồng.", AlertType.error);
-                a.ShowDialog();
-            }
-            else if (txMaBo.Text == "")
+           if (txMaBo.Text == "")
             {
                 Alert a = new Alert("Vui Lòng Chọn Bò.", AlertType.error);
                 a.ShowDialog();
@@ -377,12 +372,7 @@ namespace QuanLyBoSua
 
         private void bunifuFlatButton2_Click(object sender, EventArgs e)
         {
-            if (lbTongSoCHo.Text == "0")
-            {
-                Alert a = new Alert("Vui Lòng Chọn Chuồng.", AlertType.error);
-                a.ShowDialog();
-            }
-            else if (txMaBo.Text == "")
+            if (txMaBo.Text == "")
             {
                 Alert a = new Alert("Vui Lòng Chọn Bò.", AlertType.error);
                 a.ShowDialog();
@@ -525,6 +515,7 @@ namespace QuanLyBoSua
                             btnXoa.Enabled = true;
                             btnThem.Enabled = true;
                             dtgvChuongTrai.Enabled = true;
+                            chbThue.Checked = false;
                         }
                 }
                     catch
@@ -544,8 +535,9 @@ namespace QuanLyBoSua
             dtgvChuongTrai.ClearSelection();
             loadTrangThai();
             txMaBoTk.Text = "";
-            
-          //  getTenCHuong();
+            chbThue.Checked = false;
+
+            //  getTenCHuong();
             dem = 0;
             btnSua.Enabled = true;
             btnXoa.Enabled = true;

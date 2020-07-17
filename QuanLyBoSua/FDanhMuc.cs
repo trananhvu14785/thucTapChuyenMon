@@ -50,7 +50,7 @@ namespace QuanLyBoSua
         {
             try
             {
-                string query = "select * from NhanVien";
+                string query = "select * from NhanVien where maNv not like N'admin'";
                 DataTable Data = KetNoi.Istance.ExcuteQuerry(query);
                 cbMaNv.DataSource = Data;
                 cbMaNv.DisplayMember = "maNv";
@@ -79,7 +79,7 @@ namespace QuanLyBoSua
         {
             try
             {
-                string query = "select MaNv,TenNv,convert(nvarchar(30), NgaySinh, 20)as ngaySinh,gioiTinh,convert(nvarchar(30), ngayVaoLam, 20)as ngayVaoLam,eMail,anh from NhanVien ";
+                string query = "select MaNv,TenNv,convert(nvarchar(30), NgaySinh, 20)as ngaySinh,gioiTinh,convert(nvarchar(30), ngayVaoLam, 20)as ngayVaoLam,eMail,anh from NhanVien where maNv not like N'admin'";
                 DataTable data = KetNoi.Istance.ExcuteQuerry(query);
                 dtgvNhanVien.DataSource = data;
             }
@@ -150,7 +150,7 @@ namespace QuanLyBoSua
         bool kiemtraMaNv(string maNv)
         {
             int bien = 0;
-            string query = "Select * from nhanVien where maNv='" + maNv + "'";
+            string query = "Select * from nhanVien where maNv='" + maNv + "' and maNv not like N'admin'";
             DataTable data = KetNoi.Istance.ExcuteQuerry(query);
             foreach(DataRow row in data.Rows)
             {
@@ -190,7 +190,7 @@ namespace QuanLyBoSua
         {
             try
             {
-                string query = "select MaNv,TenNv,convert(nvarchar(30), NgaySinh, 20)as ngaySinh,gioiTinh,convert(nvarchar(30), ngayVaoLam, 20)as ngayVaoLam,eMail,anh from NhanVien where tenNv like N'%" + txTimKiem.Text + "%'";
+                string query = "select MaNv,TenNv,convert(nvarchar(30), NgaySinh, 20)as ngaySinh,gioiTinh,convert(nvarchar(30), ngayVaoLam, 20)as ngayVaoLam,eMail,anh from NhanVien where tenNv like N'%" + txTimKiem.Text + "%' and maNv not like N'admin'";
                 DataTable data = KetNoi.Istance.ExcuteQuerry(query);
                 dtgvNhanVien.DataSource = data;
             }
@@ -203,7 +203,7 @@ namespace QuanLyBoSua
 
         bool kiemtraTkTonTai(string maNv)
         {
-            string query = "Select * from account where maNv='" + maNv + "'";
+            string query = "Select * from account where maNv='" + maNv + "' and maNv not like N'admin'";
             DataTable data = KetNoi.Istance.ExcuteQuerry(query);
             if (data.Rows.Count > 0)
                 return true;
@@ -263,7 +263,7 @@ namespace QuanLyBoSua
         {
             try
             {
-                string query = "Select * from PhanViec where maNv like N'%" + txTimKiemPQ.Text + "%'";
+                string query = "Select * from PhanViec where maNv like N'%" + txTimKiemPQ.Text + "%' and maNv not like N'admin'";
                 DataTable data = KetNoi.Istance.ExcuteQuerry(query);
                 dtgvPhanQuyen.DataSource = data;
             }
@@ -288,7 +288,7 @@ namespace QuanLyBoSua
         {            
             try
             {
-                string querry = "select TenNv, anh, tenDn from NhanVien nv , account acc where acc.maNv = nv.MaNv  ";
+                string querry = "select TenNv, anh, tenDn from NhanVien nv , account acc where acc.maNv = nv.MaNv  and nv.maNv not like N'admin'";
                 DataTable data = KetNoi.Istance.ExcuteQuerry(querry);
                 dgvQLTK.DataSource = data;
             }
